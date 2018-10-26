@@ -54,8 +54,8 @@
       <file leaf-file-name="dytt_spider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dytt_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="134" column="29" lean-forward="false" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
+            <state relative-caret-position="166">
+              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding>
                 <element signature="e#2#24#0" expanded="true" />
               </folding>
@@ -113,8 +113,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="131" />
-    <option name="y" value="171" />
+    <option name="x" value="656" />
+    <option name="y" value="163" />
     <option name="width" value="1231" />
     <option name="height" value="1018" />
   </component>
@@ -440,7 +440,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="131" y="171" width="1231" height="1018" extended-state="0" />
+    <frame x="656" y="163" width="1231" height="1018" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2977292" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -679,8 +679,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dytt_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="134" column="29" lean-forward="false" selection-start-line="134" selection-start-column="29" selection-end-line="134" selection-end-column="29" />
+        <state relative-caret-position="166">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#2#24#0" expanded="true" />
           </folding>
