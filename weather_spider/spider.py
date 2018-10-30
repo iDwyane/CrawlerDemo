@@ -1,8 +1,8 @@
 
 import  requests
 from bs4 import BeautifulSoup
-
-ALL_DATA = {}
+from pyecharts import Bar
+ALL_DATA = []
 
 def parse_page(url):
     headers = {
@@ -28,8 +28,8 @@ def parse_page(url):
             city = list(city_td.stripped_strings)[0]  # 生成器转成列表，然后取第0个
             temperature_td = tds[-2] # 倒数第二个
             min_temp = list(temperature_td.stripped_strings)[0]
-            ALL_DATA.append({{'city':city,'min_temp':int(min_temp)}})
-            print({'city':city,'min_temp':int(min_temp)})
+            ALL_DATA.append({'city':city,'min_temp':int(min_temp)})
+            # print({'city':city,'min_temp':int(min_temp)})
             # print('='*30)
 
 
@@ -43,7 +43,6 @@ def main():
     # url = 'http://www.weather.com.cn/textFC/xn.shtml'
     # url = 'http://www.weather.com.cn/textFC/gat.shtml'
 
-    # data = ALL_DATA[0:10]
     urls = {
         'http://www.weather.com.cn/textFC/db.shtml',
         'http://www.weather.com.cn/textFC/hb.shtml',
@@ -57,8 +56,13 @@ def main():
 
     # 分析数据
     # 根据最低气温排序
-    # ALL_DATA.sort(key=lambda data=data['min_temp'])
-    # print(ALL_DATA)
+    ALL_DATA.sort(key=lambda data:data['min_temp'])
+    data = ALL_DATA[0:10] # 前十个低温的城市
+    cities = list(map(lambda x: x['city'], data))
+    temps = list(map(lambda x: x['min_temp'], data))
+    chart = Bar("中国天气最低气温排行榜")
+    chart.add('',cities,temps)
+    chart.render('temperature.html')
 
 if __name__ == '__main__':
     main()
