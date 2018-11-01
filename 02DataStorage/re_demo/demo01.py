@@ -98,9 +98,9 @@ import re
 # ret = re.match("\d{17}[\dxX]",text)
 # print(ret.group())
 
-# 19、
+# 19、验证用户名(用户名长度为6-20位之间,大小写字母或者数字均可)
 text = "abCDf1245"
-ret = re.match("^[A-Za-z0-9]{6,20}+$",text)
+ret = re.match("^[A-Za-z0-9]{6,20}$",text)
 print(ret.group())
 
 # 19、^ (脱字号) 在macth函数中可以省略，效果一样，都是以什么开头
