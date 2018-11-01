@@ -98,6 +98,10 @@ import re
 # ret = re.match("\d{17}[\dxX]",text)
 # print(ret.group())
 
+# 19、
+text = "abCDf1245"
+ret = re.match("^[A-Za-z0-9]{6,20}+$",text)
+print(ret.group())
 
 # 19、^ (脱字号) 在macth函数中可以省略，效果一样，都是以什么开头
 # text = "adX"
@@ -106,7 +110,7 @@ import re
 
 # 20、search
 # text = "adX"
-# ret = re.search("^a",text)
+# ret = re.search("d",text)
 # print(ret.group())
 
 # 21、 $ 以什么结尾
