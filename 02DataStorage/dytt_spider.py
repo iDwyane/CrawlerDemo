@@ -87,15 +87,17 @@ def parse_detail_page(url):
             info = info.replace("◎导　　演", "").strip()
             movie["director"] = info
         elif info.startswith("◎主　　演"):
-            # info = info.replace("◎主　　演", "").strip()
-            # 因为主演有很多个，再加上其在电影天堂中元素的特殊性，需要遍历一遍，在分别求出每一个演员
             actors = []
+            actor = info.replace("◎主　　演", "").strip()
+            actors.append(actor)
+            # 因为主演有很多个，再加上其在电影天堂中元素的特殊性，需要遍历一遍，在分别求出每一个演员
             for x in range(index+1,len(infos)): # 从演员 infos 开始遍历，求出每一个演员
                 actor = infos[x].strip()
                 if actor.startswith("◎"): # 也就是到了标签 的 ◎ 就退出
                     break
                 actors.append(actor)
             movie['actor'] = actors
+            print(movie)
         elif info.startswith('◎简　　介 '):
 
             # info = info.replace('◎简　　介 ',"").strip()
@@ -104,7 +106,7 @@ def parse_detail_page(url):
                   break
                 profile = infos[x].strip()
                 movie['profile'] = profile
-            # print(movie)
+
         elif info.startswith('◎获奖情况 '):
             awards = []
             # info = info.replace("◎获奖情况 ", "").strip()
