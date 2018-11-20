@@ -8,7 +8,7 @@ class QsbkSpiderSpider(scrapy.Spider):
     name = 'qsbk_spider'
     allowed_domains = ['qiushibaike.com']
     start_urls = ['https://www.qiushibaike.com/text/page/1/']
-
+    base_domain = "https://www.qiushibaike.com"
     def parse(self, response):
 
         contentLeft = response.xpath("//div[@id='content-left']/div") # 获得的数据是 SelectorList 类型，实际上也是继承 Selector
@@ -23,3 +23,11 @@ class QsbkSpiderSpider(scrapy.Spider):
             yield item
             # items.append(item)
         # return items
+        next_url = response.xpath("//ul[@class='pagination']/li[last()]/a/@href").get()
+        print('网页'+next_url)
+        print("="*50)
+        if not next_url:
+            return
+        else:
+            # 发送另外一个请求 callback 代表请求回来后，执行self.parse()的函数
+            yield scrapy.Request(self.base_domain+next_url,callback=self.parse)
